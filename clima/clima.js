@@ -1,8 +1,9 @@
 const axios = require('axios');
+const token = 'TU-TOKEN';
 
 const getClima = async (lat, lng) => {
 
-    const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=9fb86edaf822ed43e34e25043a580626`);
+    const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${token}`);
 
     return resp.data.main.temp;
 }

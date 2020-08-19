@@ -1,10 +1,11 @@
 const axios = require('axios');
+const token = 'TU-TOKEN';
 
 const getLugarLatLng = async (direccion) => {
     const encodedUrl = encodeURI(direccion);
 
     const instance = axios.create({
-        baseURL: `https://geocode.xyz/?locate=location?city=${encodedUrl}&auth=675846731716370473554x27118&json=1`,
+        baseURL: `https://geocode.xyz/?locate=location?city=${encodedUrl}&auth=${token}&json=1`,
     });
 
     const resp = await instance.get();
